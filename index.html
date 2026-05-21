@@ -394,6 +394,313 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   line-height: 1.5;
 }
 
+/* ZUKUNFTSUHR */
+.zukunftsuhr {
+  padding: 80px 24px 60px;
+  background: linear-gradient(180deg, transparent 0%, rgba(230, 238, 247, 0.4) 100%);
+}
+.zukunftsuhr-inner {
+  max-width: var(--max); margin: 0 auto;
+}
+.zukunftsuhr-card {
+  background: linear-gradient(135deg, var(--navy-deepest) 0%, var(--navy-deep) 60%, var(--blue) 130%);
+  border-radius: 32px;
+  padding: 56px;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(10, 34, 64, 0.25);
+}
+.zukunftsuhr-card::before {
+  content: '';
+  position: absolute;
+  top: -30%; right: -10%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(147, 197, 253, 0.2), transparent 60%);
+  pointer-events: none;
+}
+.zukunftsuhr-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(147, 197, 253, 0.15);
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--blue-light);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  position: relative; z-index: 1;
+}
+.zukunftsuhr-eyebrow::before {
+  content: '';
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #34D399;
+  box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.2);
+  animation: pulse-live 1.6s ease-in-out infinite;
+}
+@keyframes pulse-live {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.zukunftsuhr-card h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(28px, 3.5vw, 38px);
+  line-height: 1.15; font-weight: 500;
+  letter-spacing: -0.01em; color: var(--white);
+  margin-bottom: 12px;
+  position: relative; z-index: 1;
+}
+.zukunftsuhr-card h2 em {
+  font-style: italic; font-weight: 400;
+  color: var(--blue-light);
+}
+.zukunftsuhr-card .lead {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 15px;
+  line-height: 1.55;
+  max-width: 620px;
+  margin-bottom: 36px;
+  position: relative; z-index: 1;
+}
+
+.uhr-main {
+  position: relative; z-index: 1;
+  margin-bottom: 28px;
+}
+.uhr-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--blue-light);
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+.uhr-value {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(48px, 6vw, 78px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+.uhr-value-unit {
+  font-family: 'Fraunces', serif;
+  font-size: 0.45em;
+  color: var(--blue-light);
+  font-weight: 400;
+  margin-left: 8px;
+}
+.uhr-mini-stats {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.uhr-mini {
+  display: flex; flex-direction: column;
+}
+.uhr-mini-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(147, 197, 253, 0.85);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.uhr-mini-value {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+.uhr-mini-value-unit {
+  font-size: 0.55em;
+  color: var(--blue-light);
+  font-weight: 400;
+  margin-left: 4px;
+}
+.uhr-note {
+  position: relative; z-index: 1;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.5;
+  margin-top: 24px;
+  max-width: 620px;
+}
+
+/* CHARTS */
+.charts {
+  padding: 40px 24px 60px;
+}
+.charts-inner {
+  max-width: var(--max); margin: 0 auto;
+}
+.charts-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.charts-head h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(28px, 3.5vw, 38px);
+  line-height: 1.15; font-weight: 500;
+  letter-spacing: -0.01em; color: var(--navy-deepest);
+  margin-bottom: 12px;
+}
+.charts-head h2 em {
+  font-style: italic; font-weight: 400;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--navy-deep) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 0 0.12em 0.05em 0;
+  margin: 0 -0.04em 0 0;
+}
+.charts-head p {
+  color: var(--text-muted); font-size: 16px;
+  max-width: 620px; margin: 0 auto;
+}
+.chart-card {
+  background: var(--white);
+  border: 1px solid rgba(10, 34, 64, 0.08);
+  border-radius: 24px;
+  padding: 32px 36px;
+  margin-bottom: 20px;
+}
+.chart-title {
+  font-family: 'Fraunces', serif;
+  font-size: 22px; font-weight: 500;
+  color: var(--navy-deepest);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+.chart-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+.chart-svg-wrap {
+  width: 100%;
+  margin-bottom: 18px;
+}
+.chart-svg-wrap svg {
+  width: 100%; height: auto;
+  display: block;
+}
+.chart-legend {
+  display: flex; gap: 24px;
+  font-size: 13px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.chart-legend-item {
+  display: flex; align-items: center; gap: 8px;
+  color: var(--text-muted);
+}
+.chart-legend-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.chart-source {
+  font-size: 12px;
+  color: var(--text-soft);
+  padding-top: 14px;
+  border-top: 1px solid rgba(10, 34, 64, 0.06);
+}
+
+/* MYTHOS */
+.mythos {
+  padding: 80px 24px 40px;
+}
+.mythos-inner {
+  max-width: var(--max); margin: 0 auto;
+}
+.mythos-head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.mythos-head h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(28px, 3.5vw, 38px);
+  line-height: 1.15; font-weight: 500;
+  letter-spacing: -0.01em; color: var(--navy-deepest);
+  margin-bottom: 12px;
+}
+.mythos-head h2 em {
+  font-style: italic; font-weight: 400;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--navy-deep) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 0 0.12em 0.05em 0;
+  margin: 0 -0.04em 0 0;
+}
+.mythos-head p {
+  color: var(--text-muted); font-size: 16px;
+  max-width: 620px; margin: 0 auto;
+}
+.mythos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.mythos-card {
+  background: var(--white);
+  border: 1px solid rgba(10, 34, 64, 0.08);
+  border-radius: 18px;
+  padding: 22px 26px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: start;
+}
+.mythos-number {
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--blue), var(--navy-deep));
+  display: flex; align-items: center; justify-content: center;
+  color: var(--white);
+  font-family: 'Fraunces', serif;
+  font-size: 18px; font-weight: 500;
+  flex-shrink: 0;
+}
+.mythos-content .mythos-claim {
+  font-family: 'Fraunces', serif;
+  font-size: 15px; font-weight: 500;
+  color: var(--text-soft);
+  font-style: italic;
+  margin-bottom: 6px;
+  text-decoration: line-through;
+  text-decoration-color: rgba(220, 38, 38, 0.5);
+  text-decoration-thickness: 2px;
+}
+.mythos-content .mythos-truth {
+  font-family: 'Fraunces', serif;
+  font-size: 17px; font-weight: 500;
+  color: var(--navy-deepest);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+.mythos-content .mythos-truth em {
+  font-style: italic;
+  color: var(--blue);
+}
+.mythos-content .mythos-explain {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
 /* COMPARISON */
 .comparison {
   padding: 80px 24px 40px;
@@ -970,6 +1277,19 @@ body.modal-locked { overflow: hidden; }
   .info { padding: 60px 20px 24px; }
   .info-grid { grid-template-columns: 1fr; gap: 16px; }
   .comparison { padding: 60px 20px 24px; }
+  .mythos { padding: 60px 20px 24px; }
+  .mythos-card { padding: 18px 18px; gap: 14px; }
+  .mythos-number { width: 36px; height: 36px; font-size: 16px; }
+  .mythos-content .mythos-truth { font-size: 15px; }
+  .mythos-content .mythos-claim { font-size: 13px; }
+  .mythos-content .mythos-explain { font-size: 12px; }
+  .charts { padding: 20px 20px 60px; }
+  .chart-card { padding: 24px 20px; }
+  .chart-title { font-size: 19px; }
+  .zukunftsuhr { padding: 60px 20px 40px; }
+  .zukunftsuhr-card { padding: 32px 24px; border-radius: 24px; }
+  .uhr-mini-stats { grid-template-columns: 1fr; gap: 16px; }
+  .uhr-mini-value { font-size: 22px; }
   .comparison-cards { grid-template-columns: 1fr; gap: 16px; }
   .comp-card { padding: 28px 22px; }
   .comp-stat-value { font-size: 32px; }
@@ -1173,107 +1493,273 @@ body.modal-locked { overflow: hidden; }
   </div>
 </section>
 
-<!-- SWITCH -->
-<section class="switch-section">
-  <div class="switch-card">
-    <div class="switch-content">
-      <span class="switch-eyebrow">Schon privat versichert?</span>
-      <h2>Dein PKV-Beitrag steigt? Es gibt <em>bessere Optionen.</em></h2>
-      <p class="lead-desc">Zum 1. Januar 2026 sind die Beiträge für rund 60 % aller Privatversicherten um durchschnittlich 13 % gestiegen. Du musst das nicht hinnehmen. Ein interner Tarifwechsel hält deine Altersrückstellungen und senkt deinen Beitrag spürbar.</p>
-      <a href="#beratung" class="btn-secondary">
-        Tarifwechsel prüfen lassen
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-      </a>
+<!-- MYTHOS -->
+<section class="mythos">
+  <div class="mythos-inner">
+    <div class="mythos-head">
+      <h2>Mit den größten <em>Vorurteilen</em> aufgeräumt.</h2>
+      <p>Rund um die private Krankenversicherung halten sich hartnäckig Mythen. Hier die Realität dazu.</p>
     </div>
 
-    <ul class="switch-list">
-      <li>
-        <div class="switch-list-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+    <div class="mythos-grid">
+      <div class="mythos-card">
+        <div class="mythos-number">1</div>
+        <div class="mythos-content">
+          <div class="mythos-claim">"Die PKV ist nur etwas für Reiche."</div>
+          <div class="mythos-truth">Schon ab <em>77.400 € Bruttojahresgehalt</em> kannst du als Angestellter wechseln.</div>
+          <p class="mythos-explain">Selbstständige, Beamte und Studenten können sogar unabhängig vom Einkommen in die PKV. Bundesweit sind 8,79 Mio. Menschen privat vollversichert. Das sind nicht nur Topverdiener.</p>
         </div>
-        <div class="switch-list-text">
-          <strong>Tarifwechsel nach §204 VVG</strong>
-          <p>Innerhalb deiner Gesellschaft wechseln, ohne Altersrückstellungen zu verlieren.</p>
+      </div>
+
+      <div class="mythos-card">
+        <div class="mythos-number">2</div>
+        <div class="mythos-content">
+          <div class="mythos-claim">"Im Alter wird die PKV unbezahlbar."</div>
+          <div class="mythos-truth">PKV-Beiträge stiegen seit 2005 mit <em>3,1 % pro Jahr</em>, GKV mit 3,8 %.</div>
+          <p class="mythos-explain">Langfristig steigen GKV-Beiträge sogar stärker. Hinzu kommt: Ab dem 60. Lebensjahr fällt der gesetzliche Zuschlag weg, und Altersrückstellungen senken den Beitrag im Ruhestand zusätzlich.</p>
         </div>
-      </li>
-      <li>
-        <div class="switch-list-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      </div>
+
+      <div class="mythos-card">
+        <div class="mythos-number">3</div>
+        <div class="mythos-content">
+          <div class="mythos-claim">"Ein Wechsel zurück in die GKV ist unmöglich."</div>
+          <div class="mythos-truth">Ein Rückwechsel ist <em>komplexer, aber möglich</em>, zum Beispiel bei einer Familiengründung.</div>
+          <p class="mythos-explain">Unter bestimmten Voraussetzungen ist ein Rückweg in die GKV möglich. Die Hürden sind aber höher, deshalb sollte die Entscheidung gut beraten sein. Genau dafür sind wir da.</p>
         </div>
-        <div class="switch-list-text">
-          <strong>Beitrag senken, Leistung erhalten</strong>
-          <p>Im Schnitt 80 bis 250 € weniger pro Monat, bei gleichem oder besserem Schutz.</p>
+      </div>
+
+      <div class="mythos-card">
+        <div class="mythos-number">4</div>
+        <div class="mythos-content">
+          <div class="mythos-claim">"Die PKV zahlt nur, wenn es ihr passt."</div>
+          <div class="mythos-truth">Die Leistungen sind <em>vertraglich garantiert</em>, ein Leben lang.</div>
+          <p class="mythos-explain">Was bei Vertragsabschluss zugesichert wurde, bleibt unverändert. Die PKV kann dir Leistungen nicht einseitig kürzen, wie es politische Reformen bei der GKV regelmäßig tun.</p>
         </div>
-      </li>
-      <li>
-        <div class="switch-list-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        </div>
-        <div class="switch-list-text">
-          <strong>Kostenlose Bestandsanalyse</strong>
-          <p>Wir prüfen deinen aktuellen Vertrag und zeigen dir konkret, wo du Geld sparen kannst.</p>
-        </div>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section class="reviews">
-  <div class="reviews-inner">
-    <div class="reviews-head">
-      <h2>Was Mandanten über uns <em>sagen.</em></h2>
-      <p>Echte Stimmen von Menschen, die durch unsere Beratung Klarheit gefunden haben.</p>
+<!-- CHARTS -->
+<section class="charts">
+  <div class="charts-inner">
+    <div class="charts-head">
+      <h2>Die Zahlen <em>sprechen</em> für sich.</h2>
+      <p>Zwei Diagramme, die einen langlebigen Mythos auflösen: Die PKV ist langfristig stabiler als ihr Ruf.</p>
     </div>
 
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Endlich jemand, der mir die Unterschiede zwischen den Tarifen wirklich erklärt hat und nicht versucht hat, mir irgendwas aufzuschwatzen."</p>
-        <div class="review-author">
-          <div class="review-avatar">SF</div>
-          <div class="review-meta">
-            <div class="name">Sandra F.</div>
-            <div class="loc">München</div>
+    <!-- Chart 1: GKV vs PKV Beitragsentwicklung -->
+    <div class="chart-card">
+      <div class="chart-title">Beitragsentwicklung GKV vs. PKV (2005–2025)</div>
+      <div class="chart-subtitle">Durchschnittliche jährliche Steigerung pro Jahr</div>
+
+      <div class="chart-svg-wrap">
+        <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gkvLine" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#60A5FA"/>
+              <stop offset="100%" stop-color="#22D3EE"/>
+            </linearGradient>
+            <linearGradient id="pkvLine" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#2563EB"/>
+              <stop offset="100%" stop-color="#0A2240"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Gridlines -->
+          <g stroke="#E6EEF7" stroke-width="1">
+            <line x1="60" y1="60" x2="780" y2="60"/>
+            <line x1="60" y1="130" x2="780" y2="130"/>
+            <line x1="60" y1="200" x2="780" y2="200"/>
+            <line x1="60" y1="270" x2="780" y2="270"/>
+          </g>
+
+          <!-- Y-axis labels -->
+          <g font-family="Geist, sans-serif" font-size="12" fill="#8595AD">
+            <text x="50" y="64" text-anchor="end">+100%</text>
+            <text x="50" y="134" text-anchor="end">+66%</text>
+            <text x="50" y="204" text-anchor="end">+33%</text>
+            <text x="50" y="274" text-anchor="end">0%</text>
+          </g>
+
+          <!-- X-axis -->
+          <line x1="60" y1="270" x2="780" y2="270" stroke="#0A2240" stroke-width="1.5"/>
+
+          <!-- X-axis labels -->
+          <g font-family="Geist, sans-serif" font-size="13" fill="#5A6B85" font-weight="500">
+            <text x="80" y="295">2005</text>
+            <text x="420" y="295" text-anchor="middle">2015</text>
+            <text x="760" y="295" text-anchor="end">2025</text>
+          </g>
+
+          <!-- GKV Line (3,8% p.a., steigt steiler) -->
+          <path d="M 80 270 L 250 215 L 420 155 L 600 105 L 760 65" 
+                stroke="url(#gkvLine)" stroke-width="3.5" fill="none"
+                stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="80" cy="270" r="5" fill="#60A5FA"/>
+          <circle cx="760" cy="65" r="6" fill="#22D3EE"/>
+
+          <!-- PKV Line (3,1% p.a., flacher) -->
+          <path d="M 80 270 L 250 240 L 420 195 L 600 145 L 760 105" 
+                stroke="url(#pkvLine)" stroke-width="3.5" fill="none"
+                stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="80" cy="270" r="5" fill="#2563EB"/>
+          <circle cx="760" cy="105" r="6" fill="#0A2240"/>
+
+          <!-- GKV Label -->
+          <g transform="translate(480, 80)">
+            <rect x="0" y="0" width="160" height="46" rx="10" fill="#60A5FA" fill-opacity="0.92"/>
+            <text x="14" y="20" font-family="Geist, sans-serif" font-size="11" fill="#ffffff" opacity="0.85">GKV seit 2005:</text>
+            <text x="14" y="38" font-family="Fraunces, serif" font-size="18" fill="#ffffff" font-weight="500">+3,8 % p.a.</text>
+          </g>
+
+          <!-- PKV Label -->
+          <g transform="translate(480, 165)">
+            <rect x="0" y="0" width="160" height="46" rx="10" fill="#0A2240"/>
+            <text x="14" y="20" font-family="Geist, sans-serif" font-size="11" fill="#93C5FD">PKV seit 2005:</text>
+            <text x="14" y="38" font-family="Fraunces, serif" font-size="18" fill="#ffffff" font-weight="500">+3,1 % p.a.</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="chart-legend">
+        <div class="chart-legend-item">
+          <div class="chart-legend-dot" style="background: linear-gradient(135deg, #60A5FA, #22D3EE);"></div>
+          GKV (Beitragseinnahmen je Versicherten)
+        </div>
+        <div class="chart-legend-item">
+          <div class="chart-legend-dot" style="background: linear-gradient(135deg, #2563EB, #0A2240);"></div>
+          PKV (Prämieneinnahmen je Vollversicherten)
+        </div>
+      </div>
+
+      <div class="chart-source">Quelle: Wissenschaftliches Institut der PKV (WIP), 2025</div>
+    </div>
+
+    <!-- Chart 2: Beitragsverlauf im Lebensverlauf -->
+    <div class="chart-card">
+      <div class="chart-title">PKV-Beitrag im Lebensverlauf</div>
+      <div class="chart-subtitle">Wie sich Altersrückstellungen auf den Beitrag im Alter auswirken</div>
+
+      <div class="chart-svg-wrap">
+        <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="beitragLine" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#2563EB"/>
+              <stop offset="100%" stop-color="#0A2240"/>
+            </linearGradient>
+            <linearGradient id="beitragArea" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#2563EB" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Gridlines -->
+          <g stroke="#E6EEF7" stroke-width="1">
+            <line x1="60" y1="60" x2="780" y2="60"/>
+            <line x1="60" y1="130" x2="780" y2="130"/>
+            <line x1="60" y1="200" x2="780" y2="200"/>
+            <line x1="60" y1="270" x2="780" y2="270"/>
+          </g>
+
+          <!-- Y-axis labels -->
+          <g font-family="Geist, sans-serif" font-size="12" fill="#8595AD">
+            <text x="50" y="64" text-anchor="end">hoch</text>
+            <text x="50" y="204" text-anchor="end">mittel</text>
+            <text x="50" y="274" text-anchor="end">niedrig</text>
+          </g>
+
+          <!-- X-axis -->
+          <line x1="60" y1="270" x2="780" y2="270" stroke="#0A2240" stroke-width="1.5"/>
+
+          <!-- X-axis labels (Alter) -->
+          <g font-family="Geist, sans-serif" font-size="13" fill="#5A6B85" font-weight="500">
+            <text x="80" y="295">35</text>
+            <text x="200" y="295">45</text>
+            <text x="340" y="295">55</text>
+            <text x="430" y="295">60</text>
+            <text x="540" y="295">65</text>
+            <text x="660" y="295">75</text>
+            <text x="760" y="295" text-anchor="end">85</text>
+          </g>
+
+          <!-- Area fill under the curve -->
+          <path d="M 80 240 L 200 210 L 340 160 L 430 110 L 432 145 L 540 80 L 542 175 L 660 175 L 700 175 L 760 230 L 760 270 L 80 270 Z" 
+                fill="url(#beitragArea)"/>
+
+          <!-- Main curve: rises, drops at 60 (Zuschlag weg), rises again to 65, drops at 65 (KTG/GRV weg), flat until 80, drops then -->
+          <path d="M 80 240 L 200 210 L 340 160 L 430 110 L 432 145 L 540 80 L 542 175 L 660 175 L 700 175 L 760 230" 
+                stroke="url(#beitragLine)" stroke-width="3.5" fill="none"
+                stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- Markers at key points -->
+          <circle cx="432" cy="145" r="6" fill="#2563EB" stroke="#ffffff" stroke-width="2.5"/>
+          <circle cx="540" cy="80" r="6" fill="#2563EB" stroke="#ffffff" stroke-width="2.5"/>
+          <circle cx="542" cy="175" r="6" fill="#2563EB" stroke="#ffffff" stroke-width="2.5"/>
+          <circle cx="760" cy="230" r="6" fill="#2563EB" stroke="#ffffff" stroke-width="2.5"/>
+
+          <!-- Annotation 1: Beitrag sinkt bei 60 -->
+          <g transform="translate(160, 35)">
+            <rect x="0" y="0" width="225" height="58" rx="12" fill="#ffffff" stroke="#2563EB" stroke-opacity="0.25"/>
+            <text x="14" y="22" font-family="Geist, sans-serif" font-size="11" font-weight="500" fill="#2563EB" letter-spacing="1">AB 60</text>
+            <text x="14" y="44" font-family="Fraunces, serif" font-size="14" fill="#0A2240" font-weight="500">10 % Zuschlag fällt weg</text>
+            <line x1="225" y1="58" x2="425" y2="115" stroke="#2563EB" stroke-opacity="0.4" stroke-width="1.5" stroke-dasharray="3 3"/>
+          </g>
+
+          <!-- Annotation 2: Beitrag fällt bei 65 -->
+          <g transform="translate(540, 35)">
+            <rect x="0" y="0" width="240" height="58" rx="12" fill="#0A2240"/>
+            <text x="14" y="22" font-family="Geist, sans-serif" font-size="11" font-weight="500" fill="#93C5FD" letter-spacing="1">AB RENTENBEGINN</text>
+            <text x="14" y="44" font-family="Fraunces, serif" font-size="14" fill="#ffffff" font-weight="500">Beitrag sinkt deutlich</text>
+            <line x1="6" y1="58" x2="540" y2="178" stroke="#0A2240" stroke-opacity="0.4" stroke-width="1.5" stroke-dasharray="3 3"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="chart-legend">
+        <div class="chart-legend-item">
+          <div class="chart-legend-dot" style="background: linear-gradient(135deg, #2563EB, #0A2240);"></div>
+          PKV-Beitrag im Lebensverlauf (exemplarisch)
+        </div>
+      </div>
+
+      <div class="chart-source">Exemplarische Darstellung. Quelle: PKV-Verband, eigene Berechnung.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ZUKUNFTSUHR -->
+<section class="zukunftsuhr">
+  <div class="zukunftsuhr-inner">
+    <div class="zukunftsuhr-card">
+      <div class="zukunftsuhr-eyebrow">Live · Stand jetzt</div>
+      <h2>Die PKV denkt an die <em>Zukunft.</em></h2>
+      <p class="lead">In den Altersrückstellungen der PKV liegt heute schon das Kapital, mit dem Beiträge im Alter stabil gehalten werden. Jede Sekunde kommt mehr hinzu.</p>
+
+      <div class="uhr-main">
+        <div class="uhr-label">Alterungsrückstellungen der PKV</div>
+        <div class="uhr-value">
+          <span id="uhr-total">355.400.000.000</span><span class="uhr-value-unit">€</span>
+        </div>
+      </div>
+
+      <div class="uhr-mini-stats">
+        <div class="uhr-mini">
+          <div class="uhr-mini-label">Zuwachs pro Minute</div>
+          <div class="uhr-mini-value">
+            <span id="uhr-minute">31.200</span><span class="uhr-mini-value-unit">€</span>
+          </div>
+        </div>
+        <div class="uhr-mini">
+          <div class="uhr-mini-label">Zuwachs seit Seitenaufruf</div>
+          <div class="uhr-mini-value">
+            <span id="uhr-since">0</span><span class="uhr-mini-value-unit">€</span>
           </div>
         </div>
       </div>
 
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Hatte vorher 460 € PKV-Beitrag. Nach der Beratung 380 €, bei besseren Leistungen. Hätte ich vor zwei Jahren machen sollen."</p>
-        <div class="review-author">
-          <div class="review-avatar">TB</div>
-          <div class="review-meta">
-            <div class="name">Tobias B.</div>
-            <div class="loc">Köln</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Ich war kurz davor zu wechseln. Das Team hat mir ehrlich gesagt, dass es sich für mich nicht lohnt. Diese Ehrlichkeit hat mich überzeugt."</p>
-        <div class="review-author">
-          <div class="review-avatar">JM</div>
-          <div class="review-meta">
-            <div class="name">Julia M.</div>
-            <div class="loc">Berlin</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Sehr professionelle Beratung. Alles wurde verständlich erklärt, ohne Fachjargon. Klare Empfehlung für jeden, der wirklich verstehen will."</p>
-        <div class="review-author">
-          <div class="review-avatar">DH</div>
-          <div class="review-meta">
-            <div class="name">Daniel H.</div>
-            <div class="loc">Hamburg</div>
-          </div>
-        </div>
-      </div>
+      <div class="uhr-note">Die Alterungsrückstellung wird kalkulatorisch zu einem festen Stichtag berechnet. Aus Gründen der Veranschaulichung wird diese hier in einen stetigen Näherungswert umgerechnet. Stand: 2025, Quelle: PKV-Verband.</div>
     </div>
   </div>
 </section>
@@ -1309,7 +1795,7 @@ body.modal-locked { overflow: hidden; }
 
       <details class="faq-item">
         <summary>Was unterscheidet euch von Vergleichsportalen?</summary>
-        <div class="answer">Bei einem Vergleichsportal wirst du nach wenigen Minuten von einem Callcenter angerufen, das dir den Tarif verkauft, der die höchste Provision bringt. Wir machen das anders: Wir sind nur auf PKV spezialisiert, kennen die Klauseln im Kleingedruckten und schauen uns deinen konkreten Fall an. Manchmal raten wir auch ab. Das findest du bei einem Vergleichsportal eher selten.</div>
+        <div class="answer">Unsere Partner sind ausgewiesene Experten im Bereich der PKV und beraten nicht auf Preis, sondern auf tatsächliche Bedürfnisse. Wir sind nur auf PKV spezialisiert, kennen die Klauseln im Kleingedruckten und schauen uns deinen konkreten Fall an. Manchmal raten wir auch ab. Das findest du bei einem Vergleichsportal eher selten.</div>
       </details>
     </div>
   </div>
@@ -1341,11 +1827,14 @@ body.modal-locked { overflow: hidden; }
         <input id="telefon" type="tel" required placeholder="+49 ...">
       </div>
       <div class="field">
+        <label for="geburtsdatum">Geburtsdatum</label>
+        <input id="geburtsdatum" type="date" required>
+      </div>
+      <div class="field">
         <label for="situation">Deine aktuelle Situation</label>
         <select id="situation" required>
           <option value="">Bitte wählen</option>
           <option value="gkv">Noch gesetzlich versichert, Wechsel überlegen</option>
-          <option value="pkv-check">Bereits privat versichert, Tarif prüfen</option>
           <option value="pkv-wechsel">Bereits privat versichert, Anbieter wechseln</option>
           <option value="andere">Andere Anliegen</option>
         </select>
@@ -1643,6 +2132,40 @@ function handleSubmit(e) {
     btn.style.background = '';
   }, 2200);
 }
+
+// Live-Uhr: Alterungsrückstellungen PKV
+(function() {
+  const totalEl = document.getElementById('uhr-total');
+  const minuteEl = document.getElementById('uhr-minute');
+  const sinceEl = document.getElementById('uhr-since');
+  if (!totalEl) return;
+
+  // Basis: 355,4 Mrd. € am 01.01.2026, Zuwachs ca. 16,4 Mrd./Jahr = ~520 €/Sek
+  const BASE_TOTAL = 355_400_000_000;
+  const BASE_DATE = new Date('2026-01-01T00:00:00').getTime();
+  const PER_SECOND = 520;       // ~520 € pro Sekunde (16,4 Mrd / Jahr)
+  const PER_MINUTE = PER_SECOND * 60;
+
+  const pageLoadTime = Date.now();
+  const pageLoadBase = BASE_TOTAL + (pageLoadTime - BASE_DATE) / 1000 * PER_SECOND;
+
+  function formatNumber(n) {
+    return Math.floor(n).toLocaleString('de-DE');
+  }
+
+  function tick() {
+    const now = Date.now();
+    const elapsedSeconds = (now - BASE_DATE) / 1000;
+    const total = BASE_TOTAL + elapsedSeconds * PER_SECOND;
+    const sincePageLoad = (now - pageLoadTime) / 1000 * PER_SECOND;
+    totalEl.textContent = formatNumber(total);
+    sinceEl.textContent = formatNumber(sincePageLoad);
+  }
+
+  minuteEl.textContent = formatNumber(PER_MINUTE);
+  tick();
+  setInterval(tick, 1000);
+})();
 
 // Modal-Logik
 document.querySelectorAll('[data-modal]').forEach(trigger => {
