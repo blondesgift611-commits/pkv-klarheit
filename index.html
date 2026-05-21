@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PKV Klarheit | Endlich die passende private Krankenversicherung finden</title>
+<meta name="description" content="Spezialisierte PKV-Beratung mit 10+ Jahren Erfahrung. Persönlich, unabhängig, ohne Verkaufsdruck.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy-deepest: #061233;
+  --navy-deep: #0A2240;
+  --navy: #143164;
+  --blue: #2563EB;
+  --blue-light: #93C5FD;
+  --glass-bg: rgba(230, 238, 247, 0.55);
+  --glass-border: rgba(37, 99, 235, 0.18);
+  --bg: #FAFBFD;
+  --white: #FFFFFF;
+  --text: #0A2240;
+  --text-muted: #5A6B85;
+  --text-soft: #8595AD;
+  --max: 1180px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Geist', -apple-system, system-ui, sans-serif;
+  font-size: 17px; line-height: 1.6;
+  color: var(--text); background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; font-family: inherit; border: none; background: none; }
+
+/* NAV */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(16px);
+  background: rgba(250, 251, 253, 0.85);
+  border-bottom: 1px solid rgba(10, 34, 64, 0.06);
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto;
+  padding: 14px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo-mark img { height: 38px; width: auto; }
+.nav-cta {
+  background: var(--navy-deep); color: var(--white);
+  padding: 10px 18px; border-radius: 100px;
+  font-size: 14px; font-weight: 500;
+  transition: all 0.2s;
+}
+.nav-cta:hover { background: var(--blue); }
+
+/* HERO */
+.hero {
+  position: relative; overflow: hidden;
+  padding: 80px 24px 100px;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 800px 500px at 20% 0%, rgba(147, 197, 253, 0.25), transparent 50%),
+    radial-gradient(ellipse 600px 400px at 90% 30%, rgba(37, 99, 235, 0.12), transparent 50%);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: var(--max); margin: 0 auto;
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px;
+  align-items: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--glass-bg); backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  padding: 8px 14px; border-radius: 100px;
+  font-size: 13px; color: var(--navy-deep); font-weight: 500;
+  margin-bottom: 28px;
+}
+.hero-badge::before {
+  content: ''; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--blue); box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+}
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(40px, 5.5vw, 60px);
+  line-height: 1.05; font-weight: 500;
+  letter-spacing: -0.02em; color: var(--navy-deepest);
+  margin-bottom: 36px;
+}
+.hero h1 em {
+  font-style: italic; font-weight: 400;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--navy-deep) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 0 0.12em 0.05em 0;
+  margin: 0 -0.04em 0 0;
+  overflow: visible;
+}
+.hero p.lead {
+  font-size: 19px; line-height: 1.55; color: var(--text-muted);
+  margin-bottom: 36px; max-width: 540px;
+}
+.btn-primary {
+  background: var(--navy-deepest); color: var(--white);
+  padding: 16px 28px; border-radius: 100px;
+  font-size: 16px; font-weight: 500;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all 0.25s;
+  box-shadow: 0 8px 40px rgba(37, 99, 235, 0.18);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 50px rgba(37, 99, 235, 0.28); }
+.btn-primary svg { width: 18px; height: 18px; transition: transform 0.2s; }
+.btn-primary:hover svg { transform: translateX(4px); }
+
+/* Hero Visual (Glass card – Steps) */
+.hero-visual {
+  position: relative;
+  perspective: 1200px;
+}
+.glass-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(230, 238, 247, 0.5) 100%);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.8);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow:
+    0 1px 1px rgba(255,255,255,0.5) inset,
+    0 20px 60px rgba(10, 34, 64, 0.15),
+    0 8px 24px rgba(37, 99, 235, 0.08);
+  transform: rotate(-2deg);
+}
+.glass-card-2 {
+  position: absolute;
+  bottom: -10px; right: -40px;
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--blue) 100%);
+  color: var(--white);
+  border-radius: 18px;
+  padding: 14px 18px;
+  width: 195px;
+  transform: rotate(4deg);
+  box-shadow: 0 20px 50px rgba(10, 34, 64, 0.3);
+  display: flex; align-items: center; gap: 10px;
+}
+.glass-card-2 .icon {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--blue-light); flex-shrink: 0;
+}
+.glass-card-2 .label { font-size: 10px; opacity: 0.7; letter-spacing: 0.5px; text-transform: uppercase; }
+.glass-card-2 .val { font-family: 'Fraunces', serif; font-size: 14px; font-weight: 500; line-height: 1.2; }
+
+.card-eyebrow {
+  font-size: 12px; color: var(--text-soft); letter-spacing: 1px;
+  text-transform: uppercase; margin-bottom: 4px;
+}
+.card-title {
+  font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500;
+  color: var(--navy-deepest); margin-bottom: 22px;
+}
+
+.step-row {
+  display: flex; align-items: center; gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(10, 34, 64, 0.08);
+}
+.step-row:last-child { border-bottom: none; }
+.step-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--white);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-size: 14px; font-weight: 500;
+  color: var(--navy-deep);
+  flex-shrink: 0;
+}
+.step-row.active .step-num {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--navy-deep) 100%);
+  color: var(--white); border-color: transparent;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+.step-info { flex: 1; min-width: 0; }
+.step-info .name {
+  font-size: 14px; font-weight: 500;
+  color: var(--navy-deepest); line-height: 1.3;
+}
+.step-info .meta {
+  font-size: 12px; color: var(--text-soft);
+  margin-top: 2px;
+}
+.step-row.active .step-info .name { color: var(--blue); }
+.step-check {
+  color: rgba(10, 34, 64, 0.2);
+  font-size: 18px;
+}
+.step-row.active .step-check { color: var(--blue); }
+
+/* FAQ */
+.faq {
+  padding: 80px 24px 40px;
+}
+.faq-inner {
+  max-width: 760px; margin: 0 auto;
+}
+.faq-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.faq-head h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(28px, 3.5vw, 38px);
+  line-height: 1.15; font-weight: 500;
+  letter-spacing: -0.01em; color: var(--navy-deepest);
+  margin-bottom: 12px;
+}
+.faq-head h2 em {
+  font-style: italic; font-weight: 400;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--navy-deep) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 0 0.12em 0.05em 0;
+  margin: 0 -0.04em 0 0;
+}
+.faq-head p {
+  color: var(--text-muted); font-size: 16px;
+  max-width: 520px; margin: 0 auto;
+}
+.faq-list {
+  display: flex; flex-direction: column;
+  gap: 10px;
+}
+.faq-item {
+  background: var(--white);
+  border: 1px solid rgba(10, 34, 64, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+.faq-item[open] {
+  border-color: var(--glass-border);
+  box-shadow: 0 4px 16px rgba(10, 34, 64, 0.04);
+}
+.faq-item summary {
+  padding: 20px 24px;
+  font-weight: 500; font-size: 16px;
+  color: var(--navy-deepest);
+  cursor: pointer;
+  list-style: none;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 16px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  font-size: 24px; font-weight: 300;
+  color: var(--blue);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] summary::after {
+  content: '−';
+}
+.faq-item .answer {
+  padding: 0 24px 22px;
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* SWITCH (PKV-Bestandskunden) */
+.switch-section {
+  padding: 60px 24px;
+}
+.switch-card {
+  max-width: var(--max); margin: 0 auto;
+  background: var(--white);
+  border: 1px solid rgba(10, 34, 64, 0.08);
+  border-radius: 24px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.switch-card::before {
+  content: '';
+  position: absolute;
+  top: -30%; right: -10%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.08), transparent 60%);
+  pointer-events: none;
+}
+.switch-content {
+  position: relative; z-index: 1;
+}
+.switch-eyebrow {
+  display: inline-block;
+  font-size: 12px; font-weight: 600;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 14px;
+}
+.switch-content h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 500; line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--navy-deepest);
+  margin-bottom: 16px;
+}
+.switch-content h2 em {
+  font-style: italic; font-weight: 400;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--navy-deep) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 0 0.12em 0.05em 0;
+  margin: 0 -0.04em 0 0;
+}
+.switch-content p.lead-desc {
+  color: var(--text-muted); font-size: 16px;
+  line-height: 1.6; margin-bottom: 24px;
+}
+.switch-content .btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--navy-deep); padding: 14px 24px;
+  border-radius: 100px;
+  font-size: 15px; font-weight: 500;
+  border: 1px solid rgba(10, 34, 64, 0.15);
+  transition: all 0.2s;
+  background: var(--white);
+}
+.switch-content .btn-secondary:hover {
+  border-color: var(--navy-deep);
+  transform: translateY(-1px);
+}
+.switch-content .btn-secondary svg {
+  width: 16px; height: 16px;
+  transition: transform 0.2s;
+}
+.switch-content .btn-secondary:hover svg { transform: translateX(3px); }
+
+.switch-list {
+  list-style: none;
+  display: flex; flex-direction: column;
+  gap: 16px;
+  position: relative; z-index: 1;
+}
+.switch-list li {
+  display: flex; gap: 16px;
+  align-items: flex-start;
+  padding: 16px 20px;
+  background: rgba(230, 238, 247, 0.5);
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  border-radius: 14px;
+}
+.switch-list-icon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--blue), var(--navy-deep));
+  display: flex; align-items: center; justify-content: center;
+  color: var(--white);
+  flex-shrink: 0;
+}
+.switch-list-icon svg {
+  width: 18px; height: 18px;
+}
+.switch-list-text strong {
+  display: block;
+  font-size: 15px; font-weight: 500;
+  color: var(--navy-deepest);
+  margin-bottom: 3px;
+}
+.switch-list-text p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* COMPARISON */
+.comparison {
+  padding: 80px 24px 40px;
+  background: linear-gradient(180deg, transparent 0%, rgba(230, 238, 247, 0.4) 100%);
+}
+.comparison-inner {
+  max-width: var(--max); margin: 0 auto;
+}
+.comparison-head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.comparison-head h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(28px, 3.5vw, 38px);
+  line-height: 1.15; font-weight: 500;
+  letter-spacing: -0.01em; color: var(--navy-deepest);
+  margin-bottom: 12px;
+}
+.comparison-head h2 em {
+  font-style: italic; font-weight: 400;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--navy-deep) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 0 0.12em 0.05em 0;
+  margin: 0 -0.04em 0 0;
+}
+.comparison-head p {
+  color: var(--text-muted); font-size: 16px;
+  max-width: 620px; margin: 0 auto;
+}
+.comparison-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+.comp-card {
+  border-radius: 24px;
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.comp-card.gkv {
+  background: var(--white);
+  border: 1px solid rgba(10, 34, 64, 0.1);
+}
+.comp-card.pkv {
+  background: linear-gradient(135deg, var(--navy-deepest) 0%, var(--navy-deep) 60%, var(--blue) 130%);
+  color: var(--white);
+  box-shadow: 0 20px 50px rgba(10, 34, 64, 0.18);
+}
+.comp-card.pkv::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -30%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(147, 197, 253, 0.15), transparent 60%);
+  pointer-events: none;
+}
+.comp-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+.comp-card.gkv .comp-badge {
+  background: rgba(10, 34, 64, 0.06);
+  color: var(--text-muted);
+}
+.comp-card.pkv .comp-badge {
+  background: rgba(147, 197, 253, 0.2);
+  color: var(--blue-light);
+}
+.comp-title {
+  font-family: 'Fraunces', serif;
+  font-size: 24px; font-weight: 500;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+.comp-card.gkv .comp-title { color: var(--navy-deepest); }
+.comp-card.pkv .comp-title { color: var(--white); }
+.comp-subtitle {
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+.comp-card.gkv .comp-subtitle { color: var(--text-soft); }
+.comp-card.pkv .comp-subtitle { color: var(--blue-light); opacity: 0.85; }
+
+.comp-stat {
+  display: flex; align-items: baseline; gap: 8px;
+  margin-bottom: 8px;
+}
+.comp-stat-value {
+  font-family: 'Fraunces', serif;
+  font-size: 38px; font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.comp-card.gkv .comp-stat-value { color: var(--navy-deepest); }
+.comp-card.pkv .comp-stat-value { color: var(--white); }
+.comp-stat-suffix {
+  font-size: 14px;
+}
+.comp-card.gkv .comp-stat-suffix { color: var(--text-muted); }
+.comp-card.pkv .comp-stat-suffix { color: var(--blue-light); }
+.comp-stat-label {
+  font-size: 12px;
+  margin-bottom: 24px;
+  letter-spacing: 0.3px;
+}
+.comp-card.gkv .comp-stat-label { color: var(--text-soft); }
+.comp-card.pkv .comp-stat-label { color: var(--blue-light); opacity: 0.7; }
+
+.comp-list {
+  list-style: none;
+  display: flex; flex-direction: column;
+  gap: 10px;
+  position: relative; z-index: 1;
+}
+.comp-list li {
+  font-size: 14px;
+  line-height: 1.5;
+  display: flex; gap: 10px;
+  align-items: flex-start;
+}
+.comp-list li svg {
+  width: 16px; height: 16px;
+  flex-shrink: 0; margin-top: 3px;
+}
+.comp-card.gkv .comp-list li { color: var(--text-muted); }
+.comp-card.gkv .comp-list li svg { color: #DC2626; }
+.comp-card.pkv .comp-list li { color: rgba(255,255,255,0.9); }
+.comp-card.pkv .comp-list li svg { color: #34D399; }
+
+/* Trend bar */
+.trend-bar {
+  background: var(--white);
+  border: 1px solid rgba(10, 34, 64, 0.08);
+  border-radius: 20px;
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 24px;
+  align-items: center;
+}
+.trend-icon {
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(220, 38, 38, 0.04));
+  display: flex; align-items: center; justify-content: center;
+  color: #DC2626;
+}
+.trend-text strong {
+  display: block;
+  font-family: 'Fraunces', serif;
+  font-size: 17px; font-weight: 500;
+  color: var(--navy-deepest);
+  margin-bottom: 4px;
+}
+.trend-text p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.trend-source {
+  font-size: 11px;
+  color: var(--text-soft);
+  text-align: right;
+}
+
+/* INFO */
+.info {
+  padding: 80px 24px 40px;
+}
+.info-inner {
+  max-width: var(--max); margin: 0 auto;
+}
+.info-head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.info-head h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(28px, 3.5vw, 38px);
+  line-height: 1.15; font-weight: 500;
+  letter-spacing: -0.01em; color: var(--navy-deepest);
+  margin-bottom: 12px;
+}
+.info-head h2 em {
+  font-style: italic; font-weight: 400;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--navy-deep) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 0 0.12em 0.05em 0;
+  margin: 0 -0.04em 0 0;
+  overflow: visible;
+}
+.info-head p {
+  color: var(--text-muted); font-size: 16px;
+  max-width: 580px; margin: 0 auto;
+}
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.info-card {
+  background: var(--white);
+  border: 1px solid rgba(10, 34, 64, 0.08);
+  border-radius: 20px;
+  padding: 36px 32px;
+  transition: all 0.3s ease;
+}
+.info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(10, 34, 64, 0.06);
+  border-color: var(--glass-border);
+}
+.info-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.04));
+  display: flex; align-items: center; justify-content: center;
+  color: var(--blue);
+  margin-bottom: 18px;
+}
+.info-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--navy-deepest);
+  margin-bottom: 18px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+.info-card ul {
+  list-style: none;
+  display: flex; flex-direction: column;
+  gap: 12px;
+}
+.info-card ul li {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  display: flex; gap: 14px;
+  align-items: center;
+}
+.info-card ul li .icon-pill {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.04));
+  display: flex; align-items: center; justify-content: center;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+.info-card ul li .icon-pill svg {
+  width: 16px; height: 16px;
+}
+
+/* REVIEWS */
+.reviews {
+  padding: 80px 24px 40px;
+  position: relative;
+}
+.reviews-inner {
+  max-width: var(--max); margin: 0 auto;
+}
+.reviews-head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.reviews-head h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(28px, 3.5vw, 38px);
+  line-height: 1.15; font-weight: 500;
+  letter-spacing: -0.01em; color: var(--navy-deepest);
+  margin-bottom: 12px;
+}
+.reviews-head h2 em {
+  font-style: italic; font-weight: 400;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--navy-deep) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.reviews-head p {
+  color: var(--text-muted); font-size: 16px;
+  max-width: 520px; margin: 0 auto;
+}
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.review-card {
+  background: var(--white);
+  border: 1px solid rgba(10, 34, 64, 0.08);
+  border-radius: 18px;
+  padding: 24px 22px;
+  transition: all 0.3s ease;
+  display: flex; flex-direction: column;
+}
+.review-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(10, 34, 64, 0.06);
+  border-color: var(--glass-border);
+}
+.review-stars {
+  color: #F5A524;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+.review-text {
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--navy-deepest);
+  margin-bottom: 18px;
+  flex: 1;
+}
+.review-author {
+  display: flex; align-items: center; gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(10, 34, 64, 0.06);
+}
+.review-avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue-light), var(--blue));
+  display: flex; align-items: center; justify-content: center;
+  color: var(--white); font-weight: 600; font-size: 12px;
+  flex-shrink: 0;
+}
+.review-meta .name {
+  font-weight: 500; font-size: 13px;
+  color: var(--navy-deepest);
+}
+.review-meta .loc {
+  font-size: 11px; color: var(--text-soft);
+}
+
+.hero-cta-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  padding: 0 24px;
+}
+
+/* LEAD FORM SECTION */
+.lead-section { padding: 40px 24px 100px; }
+.lead-card {
+  max-width: 620px; margin: 0 auto;
+  background: var(--white);
+  border-radius: 28px;
+  padding: 56px 48px;
+  border: 1px solid rgba(10, 34, 64, 0.06);
+  box-shadow: 0 30px 80px rgba(10, 34, 64, 0.08);
+  position: relative; overflow: hidden;
+}
+.lead-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--navy-deep) 100%);
+}
+.lead-card h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 30px; font-weight: 500; line-height: 1.15;
+  color: var(--navy-deepest); margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.lead-card .desc {
+  color: var(--text-muted); font-size: 16px; line-height: 1.55;
+  margin-bottom: 32px;
+}
+form { display: flex; flex-direction: column; gap: 14px; }
+form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+form label {
+  font-size: 13px; color: var(--text-muted);
+  margin-bottom: 4px; font-weight: 500;
+}
+form input, form select {
+  width: 100%; padding: 14px 16px;
+  border: 1px solid rgba(10, 34, 64, 0.12);
+  border-radius: 12px;
+  font-family: inherit; font-size: 15px;
+  background: var(--white); color: var(--text);
+  transition: all 0.2s;
+}
+form input:focus, form select:focus {
+  outline: none; border-color: var(--blue);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+form .field { display: flex; flex-direction: column; }
+form button[type="submit"] {
+  background: var(--navy-deepest); color: var(--white);
+  padding: 16px 24px; border-radius: 100px;
+  font-size: 16px; font-weight: 500;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  margin-top: 6px;
+  transition: all 0.2s;
+}
+form button[type="submit"]:hover { background: var(--blue); transform: translateY(-1px); }
+.privacy-note {
+  font-size: 12px; color: var(--text-soft);
+  text-align: center; margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* FOOTER */
+footer {
+  background: var(--navy-deepest); color: rgba(255,255,255,0.7);
+  padding: 40px 24px;
+}
+.footer-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+  font-size: 13px;
+}
+.footer-inner a { color: rgba(255,255,255,0.7); margin-left: 20px; transition: color 0.2s; }
+.footer-inner a:hover { color: var(--white); }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-badge, .hero h1, .hero-cta-wrap { animation: fadeUp 0.7s ease-out both; }
+.hero h1 { animation-delay: 0.08s; }
+.hero-cta-wrap { animation-delay: 0.4s; }
+.hero-visual { animation: fadeUp 0.8s ease-out 0.24s both; }
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 18, 51, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.modal-overlay.is-open {
+  display: flex;
+  opacity: 1;
+}
+.modal {
+  background: var(--white);
+  border-radius: 24px;
+  max-width: 720px;
+  width: 100%;
+  max-height: 85vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 30px 80px rgba(6, 18, 51, 0.3);
+  transform: translateY(20px) scale(0.98);
+  transition: transform 0.3s ease;
+}
+.modal-overlay.is-open .modal {
+  transform: translateY(0) scale(1);
+}
+.modal-header {
+  padding: 24px 32px;
+  border-bottom: 1px solid rgba(10, 34, 64, 0.06);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-shrink: 0;
+}
+.modal-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--navy-deepest);
+  letter-spacing: -0.01em;
+}
+.modal-close {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(10, 34, 64, 0.05);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--navy-deep);
+  transition: all 0.2s;
+}
+.modal-close:hover {
+  background: rgba(10, 34, 64, 0.1);
+  transform: rotate(90deg);
+}
+.modal-body {
+  padding: 28px 32px 32px;
+  overflow-y: auto;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+.modal-body h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--navy-deepest);
+  margin-top: 24px;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+.modal-body h3:first-child { margin-top: 0; }
+.modal-body p { margin-bottom: 12px; }
+.modal-body strong { color: var(--navy-deepest); font-weight: 500; }
+.modal-body a { color: var(--blue); text-decoration: none; }
+.modal-body a:hover { color: var(--navy-deep); }
+.modal-body .intro {
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.modal-body .legal-ref {
+  font-size: 13px;
+  color: var(--text-soft);
+  margin-bottom: 24px;
+}
+.modal-body .notice {
+  background: rgba(37, 99, 235, 0.06);
+  border-left: 3px solid var(--blue);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 18px;
+  margin: 20px 0;
+  font-size: 14px;
+  color: var(--navy-deep);
+}
+.modal-body ul {
+  list-style: none;
+  margin: 8px 0 16px;
+  padding: 0;
+}
+.modal-body ul li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+}
+.modal-body ul li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 10px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--blue);
+  opacity: 0.5;
+}
+
+body.modal-locked { overflow: hidden; }
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .hero { padding: 56px 20px 80px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 56px; text-align: center; }
+  .hero-visual { max-width: 380px; margin: 0 auto; }
+  .hero-cta-wrap { margin-top: 48px; }
+  .glass-card-2 { right: -10px; bottom: 0; width: 200px; padding: 14px 18px; }
+  .reviews { padding: 60px 20px 24px; }
+  .reviews-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .info { padding: 60px 20px 24px; }
+  .info-grid { grid-template-columns: 1fr; gap: 16px; }
+  .comparison { padding: 60px 20px 24px; }
+  .comparison-cards { grid-template-columns: 1fr; gap: 16px; }
+  .comp-card { padding: 28px 22px; }
+  .comp-stat-value { font-size: 32px; }
+  .trend-bar { grid-template-columns: auto 1fr; gap: 16px; padding: 20px 22px; }
+  .trend-source { grid-column: 1 / -1; text-align: left; padding-left: 72px; }
+  .switch-section { padding: 40px 20px; }
+  .switch-card { grid-template-columns: 1fr; gap: 32px; padding: 32px 24px; }
+  .faq { padding: 60px 20px 24px; }
+  .faq-item summary { padding: 16px 20px; font-size: 15px; }
+  .faq-item .answer { padding: 0 20px 18px; font-size: 14px; }
+  .lead-section { padding: 20px 20px 72px; }
+  .lead-card { padding: 36px 24px; }
+  .lead-card h2 { font-size: 24px; }
+  form .row { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; text-align: center; }
+  .footer-inner a { margin: 0 10px; }
+  .modal-overlay { padding: 16px; }
+  .modal { max-height: 90vh; border-radius: 18px; }
+  .modal-header { padding: 18px 22px; }
+  .modal-header h2 { font-size: 19px; }
+  .modal-body { padding: 22px 22px 26px; font-size: 14px; }
+}
+@media (max-width: 520px) {
+  .reviews-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo-mark"><img src="assets/logo.png" alt="PKV Klarheit"></a>
+    <a href="#beratung" class="nav-cta">Kostenlose Beratung</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">100 % spezialisiert auf private Krankenversicherung</div>
+      <h1>Endlich verstehen, <em>welche PKV</em> wirklich zu dir passt.</h1>
+    </div>
+
+    <div class="hero-visual">
+      <div class="glass-card">
+        <div class="card-eyebrow">Dein Weg zur Klarheit</div>
+        <div class="card-title">In 4 Schritten zur passenden PKV</div>
+
+        <div class="step-row active">
+          <div class="step-num">1</div>
+          <div class="step-info">
+            <div class="name">Anfrage stellen</div>
+            <div class="meta">Formular in 2 Minuten ausfüllen</div>
+          </div>
+          <div class="step-check">●</div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">2</div>
+          <div class="step-info">
+            <div class="name">Erstgespräch</div>
+            <div class="meta">Wir rufen dich innerhalb 24 h zurück</div>
+          </div>
+          <div class="step-check">○</div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">3</div>
+          <div class="step-info">
+            <div class="name">Unabhängige Tarifanalyse</div>
+            <div class="meta">Wir vergleichen über 200 Tarife für dich</div>
+          </div>
+          <div class="step-check">○</div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">4</div>
+          <div class="step-info">
+            <div class="name">Klare Empfehlung</div>
+            <div class="meta">Ehrliche Empfehlung, du entscheidest</div>
+          </div>
+          <div class="step-check">○</div>
+        </div>
+      </div>
+
+      <div class="glass-card-2">
+        <div class="icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <div>
+          <div class="label">Kostenlos</div>
+          <div class="val">& unverbindlich</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-cta-wrap">
+    <a href="#beratung" class="btn-primary">
+      Kostenlose Beratung anfragen
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="comparison">
+  <div class="comparison-inner">
+    <div class="comparison-head">
+      <h2>PKV vs. GKV: Der direkte <em>Vergleich.</em></h2>
+      <p>Während die gesetzliche Krankenkasse immer teurer wird und Leistungen weiter eingeschränkt werden, bietet die PKV planbare Versorgung auf Premium-Niveau.</p>
+    </div>
+
+    <div class="comparison-cards">
+      <div class="comp-card gkv">
+        <span class="comp-badge">Gesetzliche Krankenkasse</span>
+        <div class="comp-title">GKV</div>
+        <div class="comp-subtitle">Stand 2026</div>
+
+        <div class="comp-stat">
+          <div class="comp-stat-value">1.030 €</div>
+          <div class="comp-stat-suffix">/ Monat</div>
+        </div>
+        <div class="comp-stat-label">Höchstbeitrag inkl. Pflegeversicherung</div>
+
+        <ul class="comp-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Einheitsleistung, keine individuellen Wahlmöglichkeiten
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Lange Wartezeiten auf Facharzttermine
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Mehrbettzimmer, kein Chefarzt im Standard
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Zuzahlungen für Brille, Zahnersatz & Heilmittel
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Steigender Zusatzbeitrag, politisch beeinflusst
+          </li>
+        </ul>
+      </div>
+
+      <div class="comp-card pkv">
+        <span class="comp-badge">Private Krankenversicherung</span>
+        <div class="comp-title">PKV</div>
+        <div class="comp-subtitle">Durchschnittsbeitrag 2026</div>
+
+        <div class="comp-stat">
+          <div class="comp-stat-value">617 €</div>
+          <div class="comp-stat-suffix">/ Monat</div>
+        </div>
+        <div class="comp-stat-label">Inkl. Pflegepflichtversicherung</div>
+
+        <ul class="comp-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Individuell wählbare Leistungen, ein Leben lang garantiert
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Bevorzugte Facharzttermine, meist ohne Wartezeit
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Chefarztbehandlung & Einbettzimmer inklusive
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Bis zu 100 % für Zahnersatz, Heilpraktiker & Sehhilfen
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Altersrückstellungen sichern stabile Beiträge im Alter
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="trend-bar">
+      <div class="trend-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+          <polyline points="17 6 23 6 23 12"/>
+        </svg>
+      </div>
+      <div class="trend-text">
+        <strong>GKV in der Finanzierungskrise</strong>
+        <p>Der Zusatzbeitrag hat sich seit 2015 mehr als verdreifacht (von 0,9 % auf 2,9 %). Bis 2035 droht ein Anstieg des Gesamtbeitrags auf über 20 %. Die Finanzierungslücke wird bereits 2027 auf 12 Mrd. Euro geschätzt.</p>
+      </div>
+      <div class="trend-source">Quelle: BMG, GKV-Schätzerkreis,<br>IGES-Institut 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- SWITCH -->
+<section class="switch-section">
+  <div class="switch-card">
+    <div class="switch-content">
+      <span class="switch-eyebrow">Schon privat versichert?</span>
+      <h2>Dein PKV-Beitrag steigt? Es gibt <em>bessere Optionen.</em></h2>
+      <p class="lead-desc">Zum 1. Januar 2026 sind die Beiträge für rund 60 % aller Privatversicherten um durchschnittlich 13 % gestiegen. Du musst das nicht hinnehmen. Ein interner Tarifwechsel hält deine Altersrückstellungen und senkt deinen Beitrag spürbar.</p>
+      <a href="#beratung" class="btn-secondary">
+        Tarifwechsel prüfen lassen
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <ul class="switch-list">
+      <li>
+        <div class="switch-list-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+        </div>
+        <div class="switch-list-text">
+          <strong>Tarifwechsel nach §204 VVG</strong>
+          <p>Innerhalb deiner Gesellschaft wechseln, ohne Altersrückstellungen zu verlieren.</p>
+        </div>
+      </li>
+      <li>
+        <div class="switch-list-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="switch-list-text">
+          <strong>Beitrag senken, Leistung erhalten</strong>
+          <p>Im Schnitt 80 bis 250 € weniger pro Monat, bei gleichem oder besserem Schutz.</p>
+        </div>
+      </li>
+      <li>
+        <div class="switch-list-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="switch-list-text">
+          <strong>Kostenlose Bestandsanalyse</strong>
+          <p>Wir prüfen deinen aktuellen Vertrag und zeigen dir konkret, wo du Geld sparen kannst.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <div class="reviews-inner">
+    <div class="reviews-head">
+      <h2>Was Mandanten über uns <em>sagen.</em></h2>
+      <p>Echte Stimmen von Menschen, die durch unsere Beratung Klarheit gefunden haben.</p>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Endlich jemand, der mir die Unterschiede zwischen den Tarifen wirklich erklärt hat und nicht versucht hat, mir irgendwas aufzuschwatzen."</p>
+        <div class="review-author">
+          <div class="review-avatar">SF</div>
+          <div class="review-meta">
+            <div class="name">Sandra F.</div>
+            <div class="loc">München</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Hatte vorher 460 € PKV-Beitrag. Nach der Beratung 380 €, bei besseren Leistungen. Hätte ich vor zwei Jahren machen sollen."</p>
+        <div class="review-author">
+          <div class="review-avatar">TB</div>
+          <div class="review-meta">
+            <div class="name">Tobias B.</div>
+            <div class="loc">Köln</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Ich war kurz davor zu wechseln. Das Team hat mir ehrlich gesagt, dass es sich für mich nicht lohnt. Diese Ehrlichkeit hat mich überzeugt."</p>
+        <div class="review-author">
+          <div class="review-avatar">JM</div>
+          <div class="review-meta">
+            <div class="name">Julia M.</div>
+            <div class="loc">Berlin</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Sehr professionelle Beratung. Alles wurde verständlich erklärt, ohne Fachjargon. Klare Empfehlung für jeden, der wirklich verstehen will."</p>
+        <div class="review-author">
+          <div class="review-avatar">DH</div>
+          <div class="review-meta">
+            <div class="name">Daniel H.</div>
+            <div class="loc">Hamburg</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="faq-inner">
+    <div class="faq-head">
+      <h2>Häufig gestellte <em>Fragen.</em></h2>
+      <p>Die wichtigsten Antworten, bevor du dich für ein Erstgespräch entscheidest.</p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Was kostet die Beratung?</summary>
+        <div class="answer">Nichts. Wir werden, wie alle Makler, von der Versicherung bezahlt, wenn du dich am Ende für einen Tarif entscheidest. Du zahlst keinen Cent. Und falls die PKV für dich nicht passt, sagen wir dir das auch. Dann war's eben so.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Gehe ich mit der Anfrage irgendeine Verpflichtung ein?</summary>
+        <div class="answer">Nein. Du trägst dich ein, wir rufen dich an, wir reden. Mehr nicht. Kein Vertrag, keine Anzahlung, keine Knebelklausel. Erst wenn du wirklich eine Versicherung abschließt, läuft was zwischen dir und der Gesellschaft, nicht zwischen dir und uns.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Wie lange dauert das Erstgespräch?</summary>
+        <div class="answer">15 bis 20 Minuten am Telefon. Wir schauen uns deine Situation an und klären, ob es Sinn ergibt weiterzumachen. Falls ja, bekommst du in 2-3 Tagen eine konkrete Tarifanalyse.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Was passiert mit meinen Daten?</summary>
+        <div class="answer">Die bleiben bei uns. Keine Weitergabe an Dritte, kein Verkauf an Listen, nichts davon. Wir sind als Makler nach §34d GewO bei der IHK gemeldet und arbeiten DSGVO-konform. Wenn du willst, dass wir alles löschen, sagst du Bescheid und es ist weg.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Was unterscheidet euch von Vergleichsportalen?</summary>
+        <div class="answer">Bei Check24 & Co. wirst du nach 5 Minuten von einem Callcenter angerufen, das dir den Tarif verkauft, der die höchste Provision bringt. Wir machen das anders: Wir sind nur auf PKV spezialisiert, kennen die Klauseln im Kleingedruckten und schauen uns deinen konkreten Fall an. Manchmal raten wir auch ab. Das findest du bei einem Vergleichsportal eher selten.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD FORM -->
+<section class="lead-section" id="beratung">
+  <div class="lead-card">
+    <h2>Hol dir deine PKV-Klarheit.</h2>
+    <p class="desc">Trag deine Daten ein. Wir melden uns innerhalb von 24 Stunden für ein kostenloses Erstgespräch.</p>
+
+    <form id="lead-form" onsubmit="handleSubmit(event)">
+      <div class="row">
+        <div class="field">
+          <label for="vorname">Vorname</label>
+          <input id="vorname" type="text" required placeholder="Max">
+        </div>
+        <div class="field">
+          <label for="nachname">Nachname</label>
+          <input id="nachname" type="text" required placeholder="Mustermann">
+        </div>
+      </div>
+      <div class="field">
+        <label for="email">E-Mail</label>
+        <input id="email" type="email" required placeholder="max@beispiel.de">
+      </div>
+      <div class="field">
+        <label for="telefon">Telefon</label>
+        <input id="telefon" type="tel" required placeholder="+49 ...">
+      </div>
+      <div class="field">
+        <label for="situation">Deine aktuelle Situation</label>
+        <select id="situation" required>
+          <option value="">Bitte wählen</option>
+          <option value="gkv">Noch gesetzlich versichert, Wechsel überlegen</option>
+          <option value="pkv-check">Bereits privat versichert, Tarif prüfen</option>
+          <option value="pkv-wechsel">Bereits privat versichert, Anbieter wechseln</option>
+          <option value="andere">Andere Anliegen</option>
+        </select>
+      </div>
+      <button type="submit">
+        Kostenlose Beratung anfragen
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+      <div class="privacy-note">Mit Absenden stimmst du unserer Datenschutzerklärung zu. Deine Daten werden ausschließlich zur Beratung verwendet.</div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>© 2026 PKV Klarheit · Ein Service der SalesHub Financial Commerce GmbH</div>
+    <div>
+      <a href="#" data-modal="impressum">Impressum</a>
+      <a href="#" data-modal="datenschutz">Datenschutz</a>
+      <a href="#" data-modal="agb">AGB</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal-impressum">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-impressum-title">
+    <div class="modal-header">
+      <h2 id="modal-impressum-title">Impressum</h2>
+      <button class="modal-close" aria-label="Schließen">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p class="intro">PKV Klarheit ist eine Marke der SalesHub Financial Commerce GmbH</p>
+      <p class="legal-ref">Anbieterkennzeichnung nach § 5 TMG und § 18 Abs. 2 MStV</p>
+
+      <h3>Unternehmen</h3>
+      <p>
+        <strong>SalesHub Financial Commerce GmbH</strong><br>
+        Planegger Straße 9a<br>
+        81241 München
+      </p>
+
+      <h3>Kontakt</h3>
+      <p>
+        Telefon: <a href="tel:+498945225696">089 / 4522 5696</a><br>
+        E-Mail: <a href="mailto:inbox@saleshub.finance">inbox@saleshub.finance</a><br>
+        Web: <a href="https://saleshub.finance" target="_blank" rel="noopener">https://saleshub.finance</a>
+      </p>
+
+      <h3>Handelsregister</h3>
+      <p>Sitz der Gesellschaft<br>Amtsgericht München HRB 287769</p>
+
+      <h3>Geschäftsführung</h3>
+      <p>Marcus Börner</p>
+
+      <h3>Steuer</h3>
+      <p>
+        USt-IdNr: ist beantragt<br>
+        StNr: ist beantragt<br>
+        Finanzamt München
+      </p>
+
+      <h3>Verantwortlich für den Inhalt (§ 18 Abs. 2 MStV)</h3>
+      <p>Marcus Börner</p>
+
+      <h3>Haftungshinweis</h3>
+      <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich. Des Weiteren übernehmen wir keine Haftung für die Erreichbarkeit von internen und externen verlinkten Seiten.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-datenschutz">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-datenschutz-title">
+    <div class="modal-header">
+      <h2 id="modal-datenschutz-title">Datenschutzerklärung</h2>
+      <button class="modal-close" aria-label="Schließen">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p class="intro">Diese Datenschutzerklärung gilt für alle von der SalesHub Financial Commerce GmbH betriebenen Websites, die mit der gleichen Basistechnologie ausgestattet sind.</p>
+
+      <h3>Verantwortlicher</h3>
+      <p>
+        <strong>SalesHub Financial Commerce GmbH</strong><br>
+        Planegger Straße 9a, 81241 München<br>
+        Telefon: <a href="tel:+498945225696">089 / 4522 5696</a><br>
+        E-Mail: <a href="mailto:inbox@saleshub.finance">inbox@saleshub.finance</a><br>
+        Web: <a href="https://saleshub.finance" target="_blank" rel="noopener">https://saleshub.finance</a>
+      </p>
+      <p><strong>Stand:</strong> 29.11.2023</p>
+
+      <h3>Übersicht der Verarbeitungen</h3>
+      <p>Die nachfolgende Übersicht fasst die Arten der verarbeiteten Daten und die Zwecke ihrer Verarbeitung zusammen und verweist auf die betroffenen Personen.</p>
+
+      <p><strong>Arten der verarbeiteten Daten:</strong></p>
+      <ul>
+        <li>Bestandsdaten</li>
+        <li>Kontaktdaten</li>
+        <li>Inhaltsdaten</li>
+        <li>Vertragsdaten</li>
+        <li>Nutzungsdaten</li>
+        <li>Meta-/Kommunikationsdaten</li>
+      </ul>
+
+      <p><strong>Kategorien betroffener Personen:</strong></p>
+      <ul>
+        <li>Kunden</li>
+        <li>Beschäftigte</li>
+        <li>Interessenten</li>
+        <li>Kommunikationspartner</li>
+        <li>Nutzer</li>
+        <li>Geschäfts- und Vertragspartner</li>
+      </ul>
+
+      <p><strong>Zwecke der Verarbeitung:</strong></p>
+      <ul>
+        <li>Erbringung vertraglicher Leistungen und Kundenservice</li>
+        <li>Kontaktanfragen und Kommunikation</li>
+        <li>Sicherheitsmaßnahmen</li>
+        <li>Direktmarketing</li>
+        <li>Reichweitenmessung</li>
+        <li>Büro- und Organisationsverfahren</li>
+        <li>Konversionsmessung</li>
+        <li>Verwaltung und Beantwortung von Anfragen</li>
+        <li>Servermonitoring und Fehlererkennung</li>
+        <li>Firewall</li>
+        <li>Feedback</li>
+        <li>Marketing</li>
+        <li>Profile mit nutzerbezogenen Informationen</li>
+        <li>Bereitstellung unseres Onlineangebotes und Nutzerfreundlichkeit</li>
+      </ul>
+
+      <h3>Maßgebliche Rechtsgrundlagen</h3>
+      <p>Im Folgenden erhalten Sie eine Übersicht der Rechtsgrundlagen der DSGVO, auf deren Basis wir personenbezogene Daten verarbeiten. Bitte nehmen Sie zur Kenntnis, dass neben den Regelungen der DSGVO nationale Datenschutzvorgaben in Ihrem bzw. unserem Wohn- oder Sitzland gelten können.</p>
+      <ul>
+        <li><strong>Einwilligung (Art. 6 Abs. 1 S. 1 lit. a. DSGVO)</strong> – Die betroffene Person hat ihre Einwilligung in die Verarbeitung der sie betreffenden personenbezogenen Daten für einen spezifischen Zweck oder mehrere bestimmte Zwecke gegeben.</li>
+        <li><strong>Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S. 1 lit. b. DSGVO)</strong> – Die Verarbeitung ist für die Erfüllung eines Vertrags, dessen Vertragspartei die betroffene Person ist, oder zur Durchführung vorvertraglicher Maßnahmen erforderlich.</li>
+        <li><strong>Rechtliche Verpflichtung (Art. 6 Abs. 1 S. 1 lit. c. DSGVO)</strong> – Die Verarbeitung ist zur Erfüllung einer rechtlichen Verpflichtung erforderlich, der der Verantwortliche unterliegt.</li>
+        <li><strong>Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f. DSGVO)</strong> – Die Verarbeitung ist zur Wahrung der berechtigten Interessen des Verantwortlichen oder eines Dritten erforderlich.</li>
+      </ul>
+      <p>Zusätzlich zu den Datenschutzregelungen der Datenschutz-Grundverordnung gelten nationale Regelungen zum Datenschutz in Deutschland. Hierzu gehört insbesondere das Bundesdatenschutzgesetz (BDSG).</p>
+
+      <h3>Sicherheitsmaßnahmen</h3>
+      <p>Wir treffen nach Maßgabe der gesetzlichen Vorgaben unter Berücksichtigung des Stands der Technik, der Implementierungskosten und der Art, des Umfangs, der Umstände und der Zwecke der Verarbeitung sowie der unterschiedlichen Eintrittswahrscheinlichkeiten und des Ausmaßes der Bedrohung der Rechte und Freiheiten natürlicher Personen geeignete technische und organisatorische Maßnahmen, um ein dem Risiko angemessenes Schutzniveau zu gewährleisten.</p>
+      <p>Zu den Maßnahmen gehören insbesondere die Sicherung der Vertraulichkeit, Integrität und Verfügbarkeit von Daten durch Kontrolle des physischen und elektronischen Zugangs zu den Daten als auch des sie betreffenden Zugriffs, der Eingabe, der Weitergabe, der Sicherung der Verfügbarkeit und ihrer Trennung.</p>
+      <p><strong>Kürzung der IP-Adresse:</strong> Sofern IP-Adressen von uns oder von den eingesetzten Dienstleistern und Technologien verarbeitet werden und die Verarbeitung einer vollständigen IP-Adresse nicht erforderlich ist, wird die IP-Adresse gekürzt (auch als „IP-Masking" bezeichnet).</p>
+      <p><strong>SSL-Verschlüsselung (https):</strong> Um Ihre via unserem Online-Angebot übermittelten Daten zu schützen, nutzen wir eine SSL-Verschlüsselung. Sie erkennen derart verschlüsselte Verbindungen an dem Präfix https:// in der Adresszeile Ihres Browsers.</p>
+
+      <h3>Übermittlung von personenbezogenen Daten</h3>
+      <p>Im Rahmen unserer Verarbeitung von personenbezogenen Daten kommt es vor, dass die Daten an andere Stellen, Unternehmen, rechtlich selbstständige Organisationseinheiten oder Personen übermittelt oder ihnen gegenüber offengelegt werden. Zu den Empfängern dieser Daten können z.B. mit IT-Aufgaben beauftragte Dienstleister oder Anbieter von Diensten und Inhalten gehören. In solchen Fällen beachten wir die gesetzlichen Vorgaben und schließen insbesondere entsprechende Verträge mit den Empfängern Ihrer Daten ab.</p>
+      <p><strong>Datenübermittlung innerhalb der Unternehmensgruppe:</strong> Wir können personenbezogene Daten an andere Unternehmen innerhalb unserer Unternehmensgruppe übermitteln oder ihnen den Zugriff auf diese Daten gewähren. Sofern diese Weitergabe zu administrativen Zwecken erfolgt, beruht die Weitergabe der Daten auf unseren berechtigten unternehmerischen Interessen.</p>
+
+      <h3>Datenverarbeitung in Drittländern</h3>
+      <p>Sofern wir Daten in einem Drittland (d.h., außerhalb der Europäischen Union (EU), des Europäischen Wirtschaftsraums (EWR)) verarbeiten oder die Verarbeitung im Rahmen der Inanspruchnahme von Diensten Dritter oder der Offenlegung bzw. Übermittlung von Daten an andere Personen, Stellen oder Unternehmen stattfindet, erfolgt dies nur im Einklang mit den gesetzlichen Vorgaben.</p>
+      <p>Vorbehaltlich ausdrücklicher Einwilligung oder vertraglich oder gesetzlich erforderlicher Übermittlung verarbeiten oder lassen wir die Daten nur in Drittländern mit einem anerkannten Datenschutzniveau, vertraglichen Verpflichtung durch sogenannte Standardschutzklauseln der EU-Kommission, beim Vorliegen von Zertifizierungen oder verbindlicher internen Datenschutzvorschriften verarbeiten (Art. 44 bis 49 DSGVO).</p>
+
+      <h3>Löschung von Daten</h3>
+      <p>Die von uns verarbeiteten Daten werden nach Maßgabe der gesetzlichen Vorgaben gelöscht, sobald deren zur Verarbeitung erlaubten Einwilligungen widerrufen werden oder sonstige Erlaubnisse entfallen (z.B. wenn der Zweck der Verarbeitung dieser Daten entfallen ist oder sie für den Zweck nicht erforderlich sind).</p>
+      <p>Sofern die Daten nicht gelöscht werden, weil sie für andere und gesetzlich zulässige Zwecke erforderlich sind, wird deren Verarbeitung auf diese Zwecke beschränkt. Das gilt z.B. für Daten, die aus handels- oder steuerrechtlichen Gründen aufbewahrt werden müssen.</p>
+
+      <h3>Einsatz von Cookies</h3>
+      <p>Cookies sind kleine Textdateien, bzw. sonstige Speichervermerke, die Informationen auf Endgeräten speichern und Informationen aus den Endgeräten auslesen. Z.B. um den Login-Status in einem Nutzerkonto, einen Warenkorbinhalt in einem E-Shop, die aufgerufenen Inhalte oder verwendete Funktionen eines Onlineangebotes speichern.</p>
+      <p><strong>Hinweise zur Einwilligung:</strong> Wir setzen Cookies im Einklang mit den gesetzlichen Vorschriften ein. Daher holen wir von den Nutzern eine vorhergehende Einwilligung ein, außer wenn diese gesetzlich nicht gefordert ist.</p>
+      <p><strong>Speicherdauer:</strong> Im Hinblick auf die Speicherdauer werden temporäre Cookies (Session-Cookies, werden nach Beenden des Browsers gelöscht) und permanente Cookies (bleiben gespeichert, bis zu zwei Jahre) unterschieden.</p>
+      <p><strong>Widerruf und Widerspruch:</strong> Nutzer können die von ihnen abgegebenen Einwilligungen jederzeit widerrufen und zudem einen Widerspruch gegen die Verarbeitung entsprechend den gesetzlichen Vorgaben im Art. 21 DSGVO einlegen. Nutzer können ihren Widerspruch auch mittels der Einstellungen ihres Browsers erklären.</p>
+
+      <h3>Geschäftliche Leistungen</h3>
+      <p>Wir verarbeiten Daten unserer Vertrags- und Geschäftspartner, z.B. Kunden und Interessenten im Rahmen von vertraglichen und vergleichbaren Rechtsverhältnissen sowie damit verbundenen Maßnahmen und im Rahmen der Kommunikation mit den Vertragspartnern.</p>
+      <p>Wir verarbeiten diese Daten, um unsere vertraglichen Verpflichtungen zu erfüllen. Dazu gehören insbesondere die Verpflichtungen zur Erbringung der vereinbarten Leistungen, etwaige Aktualisierungspflichten und Abhilfe bei Gewährleistungs- und sonstigen Leistungsstörungen.</p>
+      <p>Wir löschen die Daten nach Ablauf gesetzlicher Gewährleistungs- und vergleichbarer Pflichten, d.h., grundsätzlich nach Ablauf von 4 Jahren, es sei denn, dass die Daten aus gesetzlichen Gründen der Archivierung aufbewahrt werden müssen (z.B. für Steuerzwecke im Regelfall 10 Jahre).</p>
+      <ul>
+        <li><strong>Verarbeitete Datenarten:</strong> Bestandsdaten, Zahlungsdaten, Kontaktdaten, Vertragsdaten.</li>
+        <li><strong>Betroffene Personen:</strong> Interessenten, Geschäfts- und Vertragspartner.</li>
+        <li><strong>Rechtsgrundlagen:</strong> Vertragserfüllung (Art. 6 Abs. 1 lit. b), Rechtliche Verpflichtung (lit. c), Berechtigte Interessen (lit. f) DSGVO.</li>
+      </ul>
+
+      <h3>Bereitstellung des Onlineangebotes und Webhosting</h3>
+      <p>Um unser Onlineangebot sicher und effizient bereitstellen zu können, nehmen wir die Leistungen von einem oder mehreren Webhosting-Anbietern in Anspruch, von deren Servern das Onlineangebot abgerufen werden kann.</p>
+      <p>Zu den im Rahmen der Bereitstellung des Hostingangebotes verarbeiteten Daten können alle die Nutzer unseres Onlineangebotes betreffenden Angaben gehören, die im Rahmen der Nutzung und der Kommunikation anfallen. Hierzu gehören regelmäßig die IP-Adresse und alle innerhalb unseres Onlineangebotes oder von Webseiten getätigten Eingaben.</p>
+      <p><strong>E-Mail-Versand und -Hosting:</strong> Die von uns in Anspruch genommenen Webhosting-Leistungen umfassen ebenfalls den Versand, den Empfang sowie die Speicherung von E-Mails. Zu diesen Zwecken werden die Adressen der Empfänger sowie Absender als auch weitere Informationen betreffend den E-Mailversand verarbeitet.</p>
+      <p><strong>Erhebung von Zugriffsdaten und Logfiles:</strong> Wir selbst (bzw. unser Webhostinganbieter) erheben Daten zu jedem Zugriff auf den Server (sogenannte Serverlogfiles). Logfile-Informationen werden für die Dauer von maximal 30 Tagen gespeichert und danach gelöscht oder anonymisiert.</p>
+
+      <h3>Kontakt- und Anfragenverwaltung</h3>
+      <p>Bei der Kontaktaufnahme mit uns (z.B. per Kontaktformular, E-Mail, Telefon oder via soziale Medien) sowie im Rahmen bestehender Nutzer- und Geschäftsbeziehungen werden die Angaben der anfragenden Personen verarbeitet, soweit dies zur Beantwortung der Kontaktanfragen und etwaiger angefragter Maßnahmen erforderlich ist.</p>
+      <ul>
+        <li><strong>Verarbeitete Datenarten:</strong> Bestandsdaten, Kontaktdaten, Inhaltsdaten.</li>
+        <li><strong>Betroffene Personen:</strong> Kommunikationspartner.</li>
+        <li><strong>Rechtsgrundlagen:</strong> Vertragserfüllung (Art. 6 Abs. 1 lit. b), Berechtigte Interessen (lit. f) DSGVO.</li>
+      </ul>
+
+      <h3>Newsletter und elektronische Benachrichtigungen</h3>
+      <p>Wir versenden Newsletter, E-Mails und weitere elektronische Benachrichtigungen nur mit der Einwilligung der Empfänger oder einer gesetzlichen Erlaubnis.</p>
+      <p><strong>Double-Opt-In-Verfahren:</strong> Die Anmeldung zu unserem Newsletter erfolgt grundsätzlich in einem sogenannten Double-Opt-In-Verfahren. Sie erhalten nach der Anmeldung eine E-Mail, in der Sie um die Bestätigung Ihrer Anmeldung gebeten werden.</p>
+      <p><strong>Widerspruchsmöglichkeit (Opt-Out):</strong> Sie können den Empfang unseres Newsletters jederzeit kündigen, d.h. Ihre Einwilligungen widerrufen, bzw. dem weiteren Empfang widersprechen. Einen Link zur Kündigung des Newsletters finden Sie entweder am Ende eines jeden Newsletters oder können sonst eine der oben angegebenen Kontaktmöglichkeiten nutzen.</p>
+      <p><strong>Eingesetzter Dienst:</strong> Sendinblue – E-Mail-Versand-Plattform; Sendinblue GmbH, Köpenicker Straße 126, 10179 Berlin. <a href="https://de.sendinblue.com/legal/privacypolicy/" target="_blank" rel="noopener">Datenschutzerklärung</a></p>
+
+      <h3>Webanalyse, Monitoring und Optimierung</h3>
+      <p>Die Webanalyse (auch als „Reichweitenmessung" bezeichnet) dient der Auswertung der Besucherströme unseres Onlineangebotes. Es werden ebenfalls die IP-Adressen der Nutzer gespeichert. Jedoch nutzen wir ein IP-Masking-Verfahren (Pseudonymisierung durch Kürzung der IP-Adresse) zum Schutz der Nutzer.</p>
+      <p><strong>Eingesetzte Dienste:</strong></p>
+      <ul>
+        <li><strong>Google Analytics</strong> – Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung</a></li>
+        <li><strong>Google Tag Manager</strong> – Google Ireland Limited. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung</a></li>
+        <li><strong>WP Statistik</strong> – WordPress.com, San Francisco, USA.</li>
+        <li><strong>WordFence</strong> – Sicherheitsprogramm; Defiant, Inc. <a href="https://www.wordfence.com" target="_blank" rel="noopener">Website</a></li>
+        <li><strong>WP Cerber Security</strong> – Cerber Tech Inc., New York, USA. <a href="https://wpcerber.com/privacy-policy/" target="_blank" rel="noopener">Datenschutzerklärung</a></li>
+      </ul>
+
+      <h3>Präsenzen in sozialen Netzwerken</h3>
+      <p>Wir unterhalten Onlinepräsenzen innerhalb sozialer Netzwerke und verarbeiten in diesem Rahmen Daten der Nutzer, um mit den dort aktiven Nutzern zu kommunizieren oder um Informationen über uns anzubieten.</p>
+      <p>Wir weisen darauf hin, dass dabei Daten der Nutzer außerhalb des Raumes der Europäischen Union verarbeitet werden können. Ferner werden die Daten der Nutzer innerhalb sozialer Netzwerke im Regelfall für Marktforschungs- und Werbezwecke verarbeitet.</p>
+      <p><strong>Eingesetzte Plattformen:</strong></p>
+      <ul>
+        <li><strong>Instagram</strong> – Instagram Inc., USA. <a href="https://instagram.com/about/legal/privacy" target="_blank" rel="noopener">Datenschutzerklärung</a></li>
+        <li><strong>Facebook</strong> – Facebook Ireland Ltd., Dublin. <a href="https://www.facebook.com/about/privacy" target="_blank" rel="noopener">Datenschutzerklärung</a></li>
+        <li><strong>LinkedIn</strong> – LinkedIn Ireland, Dublin. <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener">Datenschutzerklärung</a></li>
+        <li><strong>Twitter</strong> – Twitter International Company, Dublin. <a href="https://twitter.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung</a></li>
+        <li><strong>Xing</strong> – XING AG, Hamburg. <a href="https://privacy.xing.com/de/datenschutzerklaerung" target="_blank" rel="noopener">Datenschutzerklärung</a></li>
+      </ul>
+
+      <h3>Plugins und eingebettete Funktionen sowie Inhalte</h3>
+      <p>Wir binden in unser Onlineangebot Funktions- und Inhaltselemente ein, die von den Servern ihrer jeweiligen Anbieter bezogen werden. Die Einbindung setzt immer voraus, dass die Drittanbieter dieser Inhalte die IP-Adresse der Nutzer verarbeiten, da sie ohne die IP-Adresse die Inhalte nicht an deren Browser senden könnten.</p>
+      <p><strong>Eingesetzte Dienste:</strong></p>
+      <ul>
+        <li><strong>Google Fonts</strong> – Schriftarten; Google Ireland Limited. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung</a></li>
+        <li><strong>Google Maps</strong> – Landkarten; Google Ireland Limited. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung</a></li>
+        <li><strong>YouTube</strong> – Videoinhalte; Google Ireland Limited. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung</a></li>
+        <li><strong>Facebook-Plugins</strong> – Facebook Ireland Ltd. <a href="https://www.facebook.com/about/privacy" target="_blank" rel="noopener">Datenschutzerklärung</a></li>
+        <li><strong>LinkedIn-Plugins</strong> – LinkedIn Ireland. <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener">Datenschutzerklärung</a></li>
+        <li><strong>Vimeo</strong> – Videohosting; Vimeo.com Inc. <a href="https://vimeo.com/privacy" target="_blank" rel="noopener">Datenschutz</a></li>
+        <li><strong>Spotify</strong> – Music Player Widget; Spotify AB, Schweden. <a href="https://www.spotify.com/de/legal/privacy-policy/" target="_blank" rel="noopener">Datenschutzerklärung</a></li>
+      </ul>
+
+      <h3>Änderung und Aktualisierung der Datenschutzerklärung</h3>
+      <p>Wir bitten Sie, sich regelmäßig über den Inhalt unserer Datenschutzerklärung zu informieren. Wir passen die Datenschutzerklärung an, sobald die Änderungen der von uns durchgeführten Datenverarbeitungen dies erforderlich machen. Wir informieren Sie, sobald durch die Änderungen eine Mitwirkungshandlung Ihrerseits (z.B. Einwilligung) oder eine sonstige individuelle Benachrichtigung erforderlich wird.</p>
+
+      <h3>Rechte der betroffenen Personen</h3>
+      <p>Ihnen stehen als Betroffene nach der DSGVO verschiedene Rechte zu, die sich insbesondere aus Art. 15 bis 21 DSGVO ergeben:</p>
+      <ul>
+        <li><strong>Widerspruchsrecht:</strong> Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung der Sie betreffenden personenbezogenen Daten Widerspruch einzulegen.</li>
+        <li><strong>Widerrufsrecht bei Einwilligungen:</strong> Sie haben das Recht, erteilte Einwilligungen jederzeit zu widerrufen.</li>
+        <li><strong>Auskunftsrecht:</strong> Sie haben das Recht, eine Bestätigung darüber zu verlangen, ob betreffende Daten verarbeitet werden und auf Auskunft über diese Daten.</li>
+        <li><strong>Recht auf Berichtigung:</strong> Sie haben das Recht, die Vervollständigung der Sie betreffenden Daten oder die Berichtigung der unrichtigen Daten zu verlangen.</li>
+        <li><strong>Recht auf Löschung und Einschränkung der Verarbeitung:</strong> Sie haben das Recht zu verlangen, dass Sie betreffende Daten unverzüglich gelöscht werden.</li>
+        <li><strong>Recht auf Datenübertragbarkeit:</strong> Sie haben das Recht, Sie betreffende Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten.</li>
+        <li><strong>Beschwerde bei Aufsichtsbehörde:</strong> Sie haben das Recht, bei einer Datenschutzaufsichtsbehörde eine Beschwerde einzulegen.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-agb">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-agb-title">
+    <div class="modal-header">
+      <h2 id="modal-agb-title">Allgemeine Geschäftsbedingungen</h2>
+      <button class="modal-close" aria-label="Schließen">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <h3>§ 1 Geltungsbereich</h3>
+      <p>Diese Allgemeinen Geschäftsbedingungen gelten für alle Leistungen der SalesHub Financial Commerce GmbH, Planegger Straße 9a, 81241 München gegenüber den Nutzern der Website und der darüber angebotenen Dienstleistungen.</p>
+
+      <h3>§ 2 Leistungsbeschreibung</h3>
+      <p>Der Anbieter erbringt unabhängige Beratungsleistungen im Bereich der privaten Krankenversicherung (PKV). Die Beratung ist für den Nutzer kostenlos. Eine Vergütung erfolgt ausschließlich durch den jeweiligen Versicherungsanbieter im Falle eines Vertragsabschlusses.</p>
+
+      <h3>§ 3 Vertragsschluss</h3>
+      <p>Die Nutzung des Online-Formulars und die Kontaktaufnahme stellen kein verbindliches Angebot dar. Ein Beratungsvertrag kommt erst durch die ausdrückliche Bestätigung beider Parteien zustande.</p>
+
+      <h3>§ 4 Datenschutz</h3>
+      <p>Die Verarbeitung personenbezogener Daten erfolgt gemäß unserer Datenschutzerklärung und den geltenden datenschutzrechtlichen Bestimmungen, insbesondere der DSGVO.</p>
+
+      <h3>§ 5 Haftung</h3>
+      <p>Der Anbieter haftet nicht für Schäden, die durch die Nutzung oder Nichtnutzung der auf der Website bereitgestellten Informationen entstehen, sofern kein vorsätzliches oder grob fahrlässiges Handeln des Anbieters vorliegt.</p>
+
+      <h3>§ 6 Anwendbares Recht</h3>
+      <p>Es gilt das Recht der Bundesrepublik Deutschland. Gerichtsstand ist München.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type="submit"]');
+  const original = btn.innerHTML;
+  btn.innerHTML = 'Anfrage gesendet ✓';
+  btn.style.background = '#10B981';
+  setTimeout(() => {
+    e.target.reset();
+    btn.innerHTML = original;
+    btn.style.background = '';
+  }, 2200);
+}
+
+// Modal-Logik
+document.querySelectorAll('[data-modal]').forEach(trigger => {
+  trigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    const modalId = 'modal-' + trigger.dataset.modal;
+    const overlay = document.getElementById(modalId);
+    if (overlay) {
+      overlay.classList.add('is-open');
+      document.body.classList.add('modal-locked');
+    }
+  });
+});
+
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay || e.target.closest('.modal-close')) {
+      overlay.classList.remove('is-open');
+      document.body.classList.remove('modal-locked');
+    }
+  });
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.is-open').forEach(o => o.classList.remove('is-open'));
+    document.body.classList.remove('modal-locked');
+  }
+});
+</script>
+
+</body>
+</html>
